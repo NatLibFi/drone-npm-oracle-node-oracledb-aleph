@@ -44,3 +44,9 @@ echo "Applying patches"
 patch -p0 < ../fix-name.patch
 patch -p0 < ../fix-charset.patch
 
+echo "Building package"
+npm install
+npm run buildbinary
+npm run buildpackage
+
+npm publish "natlibfi-oracledb-aleph-${PACKAGE_VERSION}.tgz"
